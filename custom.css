@@ -6,7 +6,8 @@
   box-sizing: border-box;
   font-family: arial, sans-serif;
   max-width: 400%;
-  font-size: 100%
+  font-size: 100%;
+  -webkit-tap-highlight-color: transparent;
 }
 h1, h2, h3, p, ul, a, strong {
   font-size: 100%
@@ -35,37 +36,39 @@ header > p {
 nav {
   text-align: center;
   margin: auto;
-  justify-content: center;
 }
-nav > a {
+nav > ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ul > li {
+  list-style-type: none;
+}
+li > a {
   font: normal bold 1em arial, sans-serif;
-  display: inline-block;
-  width: 70px;
-  height: 30px;
+  max-width: 60px;
+  height: 5px;
+  padding: 10px;
   color: white;
   text-align: center;
-  margin: auto;
   text-decoration: none;
-  border: 1px solid #0f1442;
+  border: 1px solid transparent;
   background-color: #0f1442;
   border-radius: 0 0 5px 5px;
 }
-nav a:hover {
+nav > ul > li > a:hover {
+  border-radius: 5px;
+  background-color: #185679;
   transition-duration: 0.2s;
-  padding: 7px;
-  margin: -8px 0 0 0;
-  text-align: left;
-  justify-content: left;
-  color: gray;
-  background-color: #101335;
+  transition-delay: 0.1s;
 }
+/* conteudo principal */
 main a {
   text-decoration: underline;
 }
-/* conteudo principal */
 main {
-  margin: 7px;
-  padding: 14px;
+  padding: 21px;
   font-size: 1.4em;
 }
 main > h2 {
@@ -81,7 +84,6 @@ main > h1 {
 }
 main > p {
   min-width: 320px;
-  max-width: 800px;
   margin: 15px 0 15px 0;
   font: normal normal 15px arial, sans-serif;
 }
@@ -135,12 +137,15 @@ aside {
   margin: 2px;
   border-radius: 10px;
 }
+aside a, strong {
+  color: #b5bae9;
+}
 aside > ul {
   padding: 0 30px 10px 50px;
   list-style-position: inside;
   column-count: 2;
 }
-ul > li{
+.list1 > li {
   font: normal normal 15px arial, sans-serif;
   list-style: disc;
   background-color: #6367c1;
